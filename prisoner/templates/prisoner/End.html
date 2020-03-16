@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    The Experiment is Over!
+{% endblock %}
+
+{% block content %}
+
+{% if subsession.round_number == Constants.last_round %}
+
+<p>This ends match {{Constants.num_matches}} and, thus, ends the experiment.</p>
+
+<p>We will start payments shortly. Please wait quietly at your seat until the experimenter calls your computer station number.</p>
+
+<p>Thank you very much for your participation!</p>
+
+{% else %}
+
+<p>This is the first match to end after 1 hour of play. Thus, this is the end of the experiment.</p>
+
+<p>We will start payments shortly. Please wait quietly at your seat until the experimenter calls your computer station number.</p>
+
+<p>Thank you very much for your participation!</p>
+
+{% endif %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+
+.otree-timer {
+    display: none;
+}
+    </style>
+{% endblock %}
+

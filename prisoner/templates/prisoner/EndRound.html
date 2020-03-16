@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Match {{ subsession.match_number }}, Round {{ subsession.round_in_match_number }} &#8211; Continue?
+{% endblock %}
+
+{% block content %}
+    <p> The computer rolled a 100-sided die to determine whether the match is over or continues to another round.</p>
+    {% if subsession.round_number in Constants.last_rounds %}
+        <p>The die roll was {{ dieroll }}.</p>
+        <p>Since the die roll was greater than {{ continuation_chance }}, the match is over.</p>
+    {% else %}
+        <p>The die roll was {{dieroll}}.
+        <p>Since the die roll was less than or equal to {{ continuation_chance }}, the match continues to another round.</p>
+    {%  endif %}
+
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+
+.otree-timer {
+    display: none;
+}
+    </style>
+{% endblock %}
+

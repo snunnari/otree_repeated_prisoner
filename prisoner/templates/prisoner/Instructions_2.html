@@ -1,0 +1,86 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+<div class="card card-body bg-light instructions">
+<p class="big">
+
+
+    <p> In this experiment you will be randomly paired with another person for a sequence of <b>rounds</b>.</p>
+
+    <p>Each sequence of rounds is referred to as a <b>match</b>.</p>
+
+    <p>The length of a match is <b>randomly determined</b>. After each round, there is a {{continuation_chance}}%
+         probability that the match will continue for at least another round. So, for instance, if you are in round 2, the probability there will be a third round is
+        {{continuation_chance}}% and if you are in round 9, the probability there will be a tenth round
+        is also {{continuation_chance}}%.</p>
+
+    <p>This is how the length of a match is determined: at the end of each round, the computer rolls a fair 100-sided die.
+            If the die comes up {{die_threshold_plus_one}} or more we do not continue to another round, and the match is over.
+            If the die comes up {{continuation_chance}} or less, we continue to another round of the same match.
+            We continue to more rounds, until {{die_threshold_plus_one}} or more
+            is rolled at the end of a round and the match ends.
+    </p>
+
+    <p>Once a match ends, you will be randomly paired with another person for a new match.</p>
+
+    <p>In each round, you and the person you are paired with choose simultaneously between two actions,
+        <b>Action 1</b> and <b>Action 2</b>.</p>
+
+    <p>This table shows the payoff associated with each choice:
+
+<table class='table table-bordered text-center'
+           style='width: auto; margin: auto'>
+        <tr>
+            <th colspan=2 rowspan=2></th>
+            <th colspan=2>The Other Participant</th>
+        </tr>
+        <tr>
+            <th>Action 1</th>
+            <th>Action 2</th>
+        </tr>
+        <tr>
+            <th rowspan=2><span class="rotate90">You</span></th>
+            <th>Action 1</th>
+            <td>{{ Constants.both_cooperate_payoff }}, {{ Constants.both_cooperate_payoff }}</td>
+            <td>0, {{ Constants.betray_payoff }}</td>
+        </tr>
+        <tr>
+            <th>Action 2</th>
+            <td>{{ Constants.betray_payoff }}, 0</td>
+            <td>{{ Constants.both_defect_payoff }}, {{ Constants.both_defect_payoff }}</td>
+        </tr>
+    </table>
+
+    <p></p>
+
+    <p>The first entry in each cell represents your payoff, while the second entry represents the payoff of the person you are matched with.</p>
+
+<ul>
+    <li>If you select Action 1 and the other selects Action 1, you each make 32.</li>
+    <li>If you select Action 1 and the other selects Action 2, you make 12 while the other makes 50.</li>
+    <li>If you select Action 2 and the other selects Action 1, you make 50 while the other makes 12.</li>
+    <li>If you select Action 2 and the other selects Action 2, you each make 25.</li>
+</ul>
+
+    <p>Once you and the person you are paired with have made your choices, those choices will be highlighted and your payoff for the round will appear.</p>
+
+    <p>The experiment is over at the first match to end after 1 hour of play.</p>
+
+    <p> You will earn &euro;{{Constants.conversion_rate}} for every point scored, in addition to the &euro;5 show-up fee.</p>
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
+        .big{
+            font-size: large;
+        }
+    </style>
+
+{% endblock %}

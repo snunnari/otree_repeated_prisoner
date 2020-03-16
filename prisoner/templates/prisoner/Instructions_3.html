@@ -1,0 +1,43 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+
+<div class="card card-body bg-light instructions">
+    <div class="big">
+
+<p>Before we start, let me remind you that:
+    <ul>
+        <li>The length of a match is randomly determined.</li>
+        <li>After each round, there is a {{continuation_chance}}% probability that the match will continue for at least another round.
+        <li>This is how the length of a match is determined: at the end of each round, the computer rolls a fair 100-sided die.
+            If the die comes up {{die_threshold_plus_one}} or more we do not continue to another round, and the match is over.
+            If the die comes up {{continuation_chance}} or less, we continue to another round of the same match.
+            We continue to more rounds, until {{die_threshold_plus_one}} or more
+            is rolled at the end of a round and the match ends.</li>
+        <li>You will play with the same person for the entire match.</li>
+        <li>After a match is finished, you will be randomly paired with another person for a new match.</li>
+    </ul>
+        </p>
+        <p>Are there any questions before we start with the paid matches?</p>
+            </div>
+</div>
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
+        .big{
+            font-size: large;
+        }
+        ul li {
+    padding: 5px 0px;
+    }
+    </style>
+{% endblock %}

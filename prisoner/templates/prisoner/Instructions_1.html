@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Welcome!
+{% endblock %}
+
+{% block content %}
+
+<div class="card card-body bg-light instructions">
+    <div class="big">
+
+        <p>You are about to participate in a session on decision-making, and you will be paid for your participation in cash at the end of the session.
+            You will be paid in private and have no obligation to tell others how much you earned.</p>
+
+        <p>What you earn depends partly on your decisions, partly on the decisions of others, and partly on chance.</p>
+
+        <p>Please turn off cellular phones now. Please close any program you may have open on the computer.</p>
+
+        <p>The entire session will take place through computer terminals, and all interaction between you will take place through the computers. Please do not talk or in any way try to communicate with other participants during the session.</p>
+
+        <p> We will start with a brief instruction period. During the instruction period you will be given a description of the main features of the session and will be shown how to use the computers. </p>
+
+    <p>If you have any questions during this period, raise your hand and your question will be answered so everyone can hear.</p>
+    </div>
+</div>
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
+        .big{
+            font-size: large;
+        }
+    </style>
+{% endblock %}
