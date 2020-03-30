@@ -14,8 +14,8 @@ SESSION_CONFIG_DEFAULTS = {
 SESSION_CONFIGS = [
     {
         'name': 'prisoner',
-        'display_name': "Infinitely Repeated Prisoner's Dilemma",
-        'num_demo_participants': 4,
+        'display_name': "Infinitely Repeated Prisoner's Dilemma (1 Group, 1 Match)",
+        'num_demo_participants': 2,
         'app_sequence': ['prisoner'],
     },
 ]

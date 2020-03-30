@@ -19,7 +19,7 @@ class Constants(BaseConstants):
 
     instructions_template = 'prisoner/instructions.html'
 
-    time_limit = True
+    time_limit = False
     time_limit_seconds = 3600 # time limit for session (in seconds) since first round of first match (3600 in Dal Bo and Frechette AER 2011)
 
     # payoff if 1 player defects and the other cooperates""",
@@ -31,7 +31,7 @@ class Constants(BaseConstants):
     both_defect_payoff = 25
 
     delta = 0.50 # one of two treatments in Dal Bo & Frechette AER 2011; values: 0.50, 0.75
-    num_matches = 100 # set to high number if time_limit == True
+    num_matches = 1 # set to high number (e.g., 50) if time_limit == True
     match_duration = np.random.geometric(p=(1-delta), size=num_matches)  # the first argument here is the probability the match ends after each round (i.e., 1 - \delta); the second argument is the number of matches. For documentation, see: https://docs.scipy.org/doc/numpy-1.14.1/reference/generated/numpy.random.geometric.html
     num_rounds = np.sum(match_duration)
     last_rounds = np.cumsum(match_duration)
