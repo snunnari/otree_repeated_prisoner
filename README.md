@@ -8,3 +8,5 @@ This repository contains one oTree app:
 If "time_limit==False", the app implements "num_matches" instances of an infinitely repeated game. If "time_limit==True", the app implements as many instances of an infinitely repeated game as subjects are able to play in "time_limit_seconds" (as in Dal Bò and Fréchette 2011, where the last match of each session was the first match to end after 60 minutes from the beginning of the experiment). 
 
 This app was developed with oTree version 2.5.5.
+
+Demo: https://repeated-prisoner.herokuapp.com/demo/
