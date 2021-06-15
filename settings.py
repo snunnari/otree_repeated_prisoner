@@ -31,17 +31,52 @@ REAL_WORLD_CURRENCY_CODE = 'USD'
 USE_POINTS = True
 
 ROOMS = [
-    {
-        'name': 'econ101',
-        'display_name': 'Econ 101 class',
-        'participant_label_file': '_rooms/econ101.txt',
-    },
-    {
-        'name': 'live_demo',
-        'display_name': 'Room for live demo (no participant labels)',
-    },
+dict(
+    name='Prolific_1',
+    display_name='Prolific_1',
+    use_secure_urls=False
+),
+dict(
+    name='Prolific_2',
+    display_name='Prolific_2',
+    use_secure_urls=False
+),
+dict(
+    name='Prolific_3',
+    display_name='Prolific_3',
+    use_secure_urls=False
+),
+dict(
+    name='SONA_1',
+    display_name='SONA_1',
+    use_secure_urls=False
+),
+dict(
+    name='SONA_2',
+    display_name='SONA_2',
+    use_secure_urls=False
+),
+dict(
+    name='SONA_3',
+    display_name='SONA_3',
+    use_secure_urls=False
+),
+dict(
+    name='BELSS',
+    display_name='BELSS',
+    participant_label_file='_rooms/belss.txt',
+    use_secure_urls=True
+),
+dict(
+    name='30463',
+    display_name='Intro to Cognitive Science',
+    use_secure_urls=False
+),
+dict(
+    name='live_demo',
+    display_name='Room for Live Demo (No Participant Labels)',
+)
 ]
-
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
