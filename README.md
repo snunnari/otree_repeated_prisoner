@@ -9,4 +9,3 @@ If "time_limit==False", the app implements "num_matches" instances of an infinit
 
 This app was developed with oTree version 2.5.5.
 
-Demo: https://repeated-prisoner.herokuapp.com/demo/
